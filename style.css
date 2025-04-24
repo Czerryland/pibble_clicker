@@ -2,7 +2,7 @@
 
 body{
     width: 100%;
-    height: 920px;
+    height: 100vh;
     margin: 0;
     overflow: hidden;
 }
@@ -70,59 +70,21 @@ img{
     position: relative;
     justify-content: center;
 }
-.upgrades-container{
-    display: flex;
-    justify-content: center;
-    width: 40%;
-}
-.upgrades{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 50px;
-    width: 150px;
-    border-radius: 10px;
-    background: salmon;
-    transition: 0.3s;
-    user-select: none;
-    cursor: pointer;
-}
-
-.upgrades:hover{
-    background: gold;
-}
-
-.upgrades-conatiner{
-    display: flex;
-    justify-content: center;
-}
-
-.upgrade-list{
-    position: absolute;
-    width: 500px;
-    height: 400px;
-    border-radius: 20px 20px 0 0;
-    bottom: 10px;
-    z-index: 1;
-    background-color: blue;
-    display: none;
-}
-.upgrade-container{
-    position: relative;
-    display: inline-block;
-
+.upgrades-container {
+    width: 600px; 
+    overflow-x: auto; 
+    white-space: nowrap;
 }
 .upgrade{
     margin-top: 40px;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background:aqua;
-    width: 100px;
-    height: 100px;
+    position: relative;
+    width: 150px;
+    height: 150px;
 }
 
 .upgrade>p{
@@ -133,24 +95,36 @@ img{
     width: 100%;
     height: 80px;
 }
-
-.return{
-    font-family: "Coral Pixels", serif;
-    cursor: pointer;
+.upgrade>.buy{
     position: absolute;
-    background: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 40px;
+    background:#67AE6E;
+    padding: 7px;
+    border-radius: 10px;
+    width: 50%;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
     user-select: none;
-    border-radius: 20px 0 0 0;
-    transition:0.3s;
-
+    cursor: pointer;
+    transition: 0.3s;
 }
-.return:hover{
-    background: plum;
+
+.upgrade>.buy:hover{
+    background: #328E6E;
+}
+
+.upgrade>.description{
+    height: 80px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.3s;
+    user-select: none;
+    background:gray;
+    white-space: wrap;
+}
+.upgrade>.description:hover{
+    opacity: 1;
 }
 
 .pibbClickAnim {
@@ -163,32 +137,23 @@ img{
 @keyframes pibbClickAnim {
 
     0% {
-
         transform: scale(1);
-
     }
 
     30% {
-
         transform: scale(0.9, 1.1); 
-
     }
 
     50% {
-
         transform: scale(1.1, 0.9);
-
     }
 
     70% {
-
         transform: scale(1.05, 1.05);
     }
 
     100% {
-
         transform: scale(1); 
-
     }
 
 }
