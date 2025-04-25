@@ -3,7 +3,7 @@ const pointdisplay = document.getElementById("scorenum");
 const animbox = document.getElementById("animbox");
 const washingtonUpgrade = document.getElementById("washington-buy");
 const emopibbUpgrade = document.getElementById("emopibble-buy");
-const bigPibbleContainer = document.getElementById('pibble')
+const bigPibbleContainer = document.getElementById('pibble-plus-relative')
 
 
 let score = 0;
@@ -41,8 +41,8 @@ pibbclick.addEventListener('click',()=>{
 
     var clonedImage = originalImage.cloneNode(true);
     clonedImage.classList.add('pibblePlus');
-    clonedImage.style.top = Math.random() * 100 + 'vh';
-    clonedImage.style.left = Math.random() * 100 + 'vw';
+    clonedImage.style.top = Math.random() * 100 + '%';
+    clonedImage.style.left = Math.random() * 100 + '%';
     bigPibbleContainer.appendChild(clonedImage);
     setTimeout(function() {
         clonedImage.classList.add('fade-out'); 
